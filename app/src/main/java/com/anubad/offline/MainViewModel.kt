@@ -371,7 +371,7 @@ class MainViewModel(private val app: Application) : AndroidViewModel(app) {
         }
     }
 
-    fun setHistorySearch(q: String) {
+    fun searchHistory(q: String) {
         historySearch = q
         loadHistory()
     }

@@ -58,7 +58,7 @@ fun HistoryScreen(vm: MainViewModel, onOpen: (HistoryItem) -> Unit) {
     Column(Modifier.fillMaxSize()) {
         OutlinedTextField(
             value = vm.historySearch,
-            onValueChange = vm::setHistorySearch,
+            onValueChange = vm::searchHistory,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp, vertical = 8.dp),
@@ -66,7 +66,7 @@ fun HistoryScreen(vm: MainViewModel, onOpen: (HistoryItem) -> Unit) {
             leadingIcon = { Icon(Icons.Filled.Search, contentDescription = null) },
             trailingIcon = {
                 if (vm.historySearch.isNotEmpty()) {
-                    IconButton(onClick = { vm.setHistorySearch("") }) {
+                    IconButton(onClick = { vm.searchHistory("") }) {
                         Icon(Icons.Filled.Close, contentDescription = "মুছুন")
                     }
                 }
